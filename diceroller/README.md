@@ -1,4 +1,4 @@
-# testflutterintelij
+# diceroller
 
 A new Flutter project.
 
