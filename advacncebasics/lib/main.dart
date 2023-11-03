@@ -1,8 +1,9 @@
+import 'package:advacncebasics/quiz.dart';
 import 'package:advacncebasics/startscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Home());
+  runApp(const Quiz());
 }
 
 class Home extends StatelessWidget {
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: StartScreen(),
+        body: Quiz(),
       ),
     );
   }

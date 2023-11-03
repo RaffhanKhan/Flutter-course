@@ -1,11 +1,14 @@
+import 'package:advacncebasics/quiz.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
 
-  void startQuiz() {
-    print("started quiz");
-  }
+  final void Function() startQuiz;
+  // void startQuiz() {
+  //   print("started quiz");
+  //   Quiz().
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +20,12 @@ class StartScreen extends StatelessWidget {
           // Center vertically
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              "asserts/images/quiz-logo.png",
-              width: 250,
+            Opacity(
+              opacity: 1,
+              child: Image.asset(
+                "asserts/images/quiz-logo.png",
+                width: 250,
+              ),
             ),
             const SizedBox(
               height: 40,
@@ -35,7 +41,7 @@ class StartScreen extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            TextButton(
+            TextButton.icon(
               onPressed: startQuiz,
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(10),
@@ -45,7 +51,8 @@ class StartScreen extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              child: const Text("start quiz"),
+              icon: const Icon(Icons.arrow_right_alt),
+              label: const Text("Start Quiz"),
             ),
           ],
         ),
